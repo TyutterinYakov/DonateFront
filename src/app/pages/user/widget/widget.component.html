@@ -1,1 +1,22 @@
-<p>widget works!</p>
+<mat-card>
+    <mat-list>
+        <mat-card-title>Все виджеты</mat-card-title>
+        <mat-list-item *ngFor="let w of widgets; let i=index">
+            <div mat-line><mat-card-title>#{{i+1}}</mat-card-title></div>
+            <div mat-line>Изображение: {{w.image}}</div>
+            <div mat-line>Музыка: {{w.music}}</div>
+            <div mat-line>Минимальная сумма: {{w.summMin}} руб.</div>
+            <div mat-line>Время на оповещение: {{w.time}} сек.</div>
+            
+            <mat-card-actions>
+                <button mat-stroked-button color="primary" routerLink="/admin/category/update/">Обновить</button>
+                <button mat-stroked-button color="warn" (click)="removeWidget(w.personalizationId)">Удалить</button>
+            </mat-card-actions>
+            <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+
+    <div class="container text-center mt15">
+        <button routerLink="/admin/add-category" mat-raised-button color="primary">Добавить виджет</button>
+    </div>
+</mat-card>

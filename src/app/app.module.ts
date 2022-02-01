@@ -26,6 +26,7 @@ import { MessageComponent } from './pages/user/message/message.component';
 import { WidgetComponent } from './pages/user/widget/widget.component';
 import { DonateComponent } from './pages/donate-page/donate/donate.component';
 import {MatTableModule} from '@angular/material/table';
+import { AlertDonateComponent } from './pages/alert-donate/alert-donate.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import {MatTableModule} from '@angular/material/table';
     SidebarComponent,
     MessageComponent,
     WidgetComponent,
-    DonateComponent
+    DonateComponent,
+    AlertDonateComponent
   ],
   imports: [
     BrowserModule,

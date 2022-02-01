@@ -1,1 +1,56 @@
-<p>donate works!</p>
+<div class="bootstrap-wrapper">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-7 offset-md-2">
+            <mat-card>
+                <mat-card-title class="mb15">Сделать донат</mat-card-title>
+                <!-- {{category | json}} -->
+                <mat-card-content>
+                                <form (ngSubmit)="submitPay()">
+            
+                                    <mat-form-field class="w100 mt15" appearance="outline">
+                                        <mat-label>Введите ваш ник</mat-label>
+                                        <input 
+                                        type="text" 
+                                        name="donateName" 
+                                        matInput 
+                                        placeholder="Введите ваш ник"
+                                        [(ngModel)]="donation.donateName"
+            
+                                        />
+                                    </mat-form-field>
+                                    <mat-form-field class="w100" appearance="outline">
+                                        <mat-label>Сообщение</mat-label>
+                                        <textarea 
+                                        type="text" 
+                                        name="message" 
+                                        matInput 
+                                        placeholder="Введите сообщение" 
+                                        rows="14"
+                                        [(ngModel)]="donation.message"
+            
+                                        ></textarea>
+                                    </mat-form-field>
+                                    <mat-form-field class="w100" appearance="outline">
+                                        <mat-label>Сумма, руб</mat-label>
+                                        <input 
+                                        type="number" 
+                                        name="summ" 
+                                        matInput 
+                                        placeholder="Введите сумму"
+                                        [(ngModel)]="donation.summ"
+            
+                                        />
+                                    </mat-form-field>
+            
+                                    <div class="container text-center mt15">
+                                        <button mat-raised-button color="primary">Отправить</button>
+                                    </div>
+                        
+                                </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        </div>
+    </div>
+</div>

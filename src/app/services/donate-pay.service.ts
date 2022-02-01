@@ -5,16 +5,13 @@ import baseUrl from './helper';
 @Injectable({
   providedIn: 'root'
 })
-export class MessageService {
+export class DonatePayService {
 
   constructor(private http:HttpClient) { }
 
-
-  getAllMessageUser(){
-    return this.http.get(`${baseUrl}/donation/`)
+  donatePay(donate:any){
+    return this.http.post(`${baseUrl}/pay/`, donate);
   }
 
-  removeMessage(donationId: number) {
-    return this.http.delete(`${baseUrl}/donation/${donationId}`);
-  }
+
 }
