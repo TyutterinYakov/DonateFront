@@ -1,0 +1,59 @@
+<mat-toolbar>
+    <a 
+    routerLink="/"
+     mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+     >
+      <mat-icon>notifications_active</mat-icon>
+    </a>
+    <span> MyDonate</span>
+    <span class="example-spacer"></span>
+    
+    <a
+    *ngIf="!login.isLoggedIn()"
+    [routerLink]="'/login'"
+    mat-icon-button
+     class="example-icon
+      favorite-icon"
+       aria-label="Example icon-button with heart icon">
+        
+      <mat-icon>login</mat-icon>
+    </a>
+    <a
+    *ngIf="!login.isLoggedIn()"
+    [routerLink]="'/register'"
+    mat-icon-button
+     class="example-icon
+      favorite-icon"
+       aria-label="Example icon-button with heart icon">
+        
+      <mat-icon>
+        app_registration
+        </mat-icon>
+    </a>
+    <a
+    (click)="logout()"
+    *ngIf="login.isLoggedIn()"
+    
+    mat-icon-button
+     class="example-icon
+      favorite-icon"
+       aria-label="Example icon-button with heart icon">
+        
+      <mat-icon>
+        logout
+        </mat-icon>
+    </a>
+    <a
+    *ngIf="login.isLoggedIn()"
+    [routerLink]="'dashboard/profile'"
+    mat-icon-button
+     class="example-icon
+      favorite-icon"
+       aria-label="Example icon-button with heart icon">
+        
+      <mat-icon>
+        account_circle
+        </mat-icon>
+    </a>
+    
+  </mat-toolbar>

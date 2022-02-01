@@ -1,0 +1,31 @@
+<mat-card>
+ <mat-card-title class="mb15">Мои сообщения</mat-card-title>
+ <mat-card-subtitle class="mt15">Всего сообщений: 4343 шт. на сумму: 342344 руб.</mat-card-subtitle>
+ <table mat-table [dataSource]="messages" class="mat-elevation-z8">
+
+  
+    <ng-container matColumnDef="donationName">
+      <th mat-header-cell *matHeaderCellDef> Имя пользователя </th>
+      <td mat-cell *matCellDef="let element"> {{element.donationName}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="message">
+      <th mat-header-cell *matHeaderCellDef> Сумма, RUB </th>
+      <td mat-cell *matCellDef="let element"> {{element.summ}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="summ">
+      <th mat-header-cell *matHeaderCellDef> Сообщение </th>
+      <td mat-cell *matCellDef="let element"> {{element.message}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Дата и время </th>
+      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+</mat-card>
