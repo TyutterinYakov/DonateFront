@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DonatePayService } from 'src/app/services/donate-pay.service';
+import { WidgetService } from 'src/app/services/widget.service';
 
 @Component({
   selector: 'app-alert-donate',
@@ -10,15 +11,24 @@ import { DonatePayService } from 'src/app/services/donate-pay.service';
 export class AlertDonateComponent implements OnInit {
 
   username="";
-  donate={
+  donate:any={
     message:'',
-    donationName:''
+    donationName:'',
+    summ:0
+  }
+
+  widget:any={
+    image:"",
+    music:'',
+    time:0,
   }
   private delay(ms: number)
   {
   return new Promise(resolve => setTimeout(resolve, ms));
   }
-  constructor(private _donation:DonatePayService, private route:ActivatedRoute) { }
+  constructor(private _donation:DonatePayService, private route:ActivatedRoute, private _widget:WidgetService) { 
+
+  }
 
   ngOnInit(): void {
     this.username=this.route.snapshot.params['userName'];
@@ -28,13 +38,25 @@ export class AlertDonateComponent implements OnInit {
 
   private async sleepExample()
   {
+    this.username="yasha1111";
   while(true){
     this.getDonation();
-    if(this.donate!=null){
-      
+    await this.delay(3000);
+    if(this.donate.summ==0){
+      await this.delay(6000);
+    } else {
+      this.getWidgetBySumm();
+      await this.delay(3000);
+      if(this.widget.time!=0){
+      await this.delay(this.widget.time*1000);
+      }
     }
-    await this.delay(6000);
-
+    this.donate=null;
+    this.widget={
+      image:"",
+      music:'',
+      time:0
+    }
   }
 }
   getDonation(){
@@ -42,6 +64,19 @@ export class AlertDonateComponent implements OnInit {
       (data:any)=>{
         console.log(data);
         this.donate=data;
+      },
+      (error)=>{
+        console.log(error);
+        
+      }
+    )
+  }
+  getWidgetBySumm(){
+    this._widget.getWidgetByUserAndSumm(this.username, this.donate.summ).subscribe(
+      (data:any)=>{
+        this.widget=data;
+        console.log(data);
+        
       },
       (error)=>{
         console.log(error);

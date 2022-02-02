@@ -20,4 +20,8 @@ export class WidgetService {
   addWidget(widget:any){
     return this.http.post(`${baseUrl}/widgets/`, widget);
   }
+
+  getWidgetByUserAndSumm(username: string, summ: string) {
+    return this.http.get(`${baseUrl}/widgets/all/${username}/${summ}`)
+  }
 }
