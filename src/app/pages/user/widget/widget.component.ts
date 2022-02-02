@@ -24,6 +24,8 @@ export class WidgetComponent implements OnInit {
     this._widget.getWidgetByUser().subscribe(
       (data:any)=>{
         this.widgets = data;
+        console.log(data);
+        
       },
       (error)=>{
         console.log(error);

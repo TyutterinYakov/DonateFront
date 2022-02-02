@@ -27,6 +27,7 @@ import { WidgetComponent } from './pages/user/widget/widget.component';
 import { DonateComponent } from './pages/donate-page/donate/donate.component';
 import {MatTableModule} from '@angular/material/table';
 import { AlertDonateComponent } from './pages/alert-donate/alert-donate.component';
+import { AddWidgetComponent } from './pages/user/add-widget/add-widget.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { AlertDonateComponent } from './pages/alert-donate/alert-donate.componen
     MessageComponent,
     WidgetComponent,
     DonateComponent,
-    AlertDonateComponent
+    AlertDonateComponent,
+    AddWidgetComponent
   ],
   imports: [
     BrowserModule,

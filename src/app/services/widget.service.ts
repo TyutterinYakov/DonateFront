@@ -17,4 +17,7 @@ export class WidgetService {
   removeWidget(widgetId: number) {
     return this.http.delete(`${baseUrl}/widgets/${widgetId}`)
   }
+  addWidget(widget:any){
+    return this.http.post(`${baseUrl}/widgets/`, widget);
+  }
 }

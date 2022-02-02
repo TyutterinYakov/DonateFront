@@ -13,5 +13,9 @@ export class DonatePayService {
     return this.http.post(`${baseUrl}/pay/`, donate);
   }
 
+  getDonationFromUserDontPlay(userName:string){
+    return this.http.get(`${baseUrl}/donation/alert/${userName}`);
+  }
+
 
 }

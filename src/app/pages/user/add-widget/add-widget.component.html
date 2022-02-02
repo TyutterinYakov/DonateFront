@@ -1,0 +1,70 @@
+<mat-card>
+
+    <mat-card-title>Добавить виджет</mat-card-title>
+    {{widget | json}}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <form (submit)="addWidget()">
+
+                        <mat-form-field class="w100" appearance="outline">
+                            <mat-label>Изображение</mat-label>
+                            <input 
+                            required
+                            type="text" 
+                            placeholder="Введите изображение" 
+                            name="image"
+                            matInput
+                            [(ngModel)]="widget.image"
+                            
+                            >
+                        </mat-form-field>
+                        <mat-form-field class="w100" appearance="outline">
+                            <mat-label>Музыка</mat-label>
+                            <input 
+                            required
+                            type="text" 
+                            placeholder="Введите музыку" 
+                            name="music"
+                            matInput
+                            [(ngModel)]="widget.music"
+                            
+                            >
+                        </mat-form-field>
+                        <mat-form-field class="w100" appearance="outline">
+                            <mat-label>Сумма</mat-label>
+                            <input 
+                            required
+                            type="number" 
+                            placeholder="Введите минимальную сумму" 
+                            name="summMin"
+                            matInput
+                            [(ngModel)]="widget.summMin"
+                            
+                            >
+                        </mat-form-field>
+                        <mat-form-field class="w100" appearance="outline">
+                            <mat-label>Время</mat-label>
+                            <input 
+                            required
+                            type="number" 
+                            placeholder="Введите время в секундах" 
+                            name="time"
+                            matInput
+                            [(ngModel)]="widget.time"
+                            
+                            >
+                        </mat-form-field>
+                        
+                            
+                          <div class="container text-center">
+                              <button mat-flat-button color="primary" type="submit">Добавить</button>
+                          </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+</mat-card>

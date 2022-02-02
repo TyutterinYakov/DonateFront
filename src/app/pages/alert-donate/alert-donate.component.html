@@ -1,1 +1,7 @@
-<p>alert-donate works!</p>
+<div class="title" *ngIf="donate!=null">
+
+            <div class="text-center">
+                {{donate.donationName}}
+                {{donate.message}}
+            </div>
+        </div>
