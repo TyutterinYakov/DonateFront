@@ -24,4 +24,10 @@ export class WidgetService {
   getWidgetByUserAndSumm(username: string, summ: string) {
     return this.http.get(`${baseUrl}/widgets/all/${username}/${summ}`)
   }
+  getWidgetById(widgetId:number) {
+    return this.http.get(`${baseUrl}/widgets/${widgetId}`);
+  }
+  updateWidget(widget: any) {
+    return this.http.put(`${baseUrl}/widgets/`, widget);
+  }
 }

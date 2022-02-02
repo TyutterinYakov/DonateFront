@@ -9,7 +9,7 @@
             <div mat-line>Время на оповещение: {{w.time}} сек.</div>
             
             <mat-card-actions>
-                <button mat-stroked-button color="primary">Обновить</button>
+                <button mat-stroked-button color="primary" [routerLink]="'/dashboard/widgets/'+w.personalizationId">Обновить</button>
                 <button mat-stroked-button color="warn" (click)="removeWidget(w.personalizationId)">Удалить</button>
             </mat-card-actions>
             <mat-divider></mat-divider>

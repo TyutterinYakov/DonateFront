@@ -38,15 +38,14 @@ export class AlertDonateComponent implements OnInit {
 
   private async sleepExample()
   {
-    this.username="yasha1111";
   while(true){
     this.getDonation();
     await this.delay(3000);
     if(this.donate.summ==0){
-      await this.delay(6000);
+      await this.delay(30000);
     } else {
       this.getWidgetBySumm();
-      await this.delay(3000);
+      await this.delay(6000);
       if(this.widget.time!=0){
       await this.delay(this.widget.time*1000);
       }
@@ -62,8 +61,9 @@ export class AlertDonateComponent implements OnInit {
   getDonation(){
     this._donation.getDonationFromUserDontPlay(this.username).subscribe(
       (data:any)=>{
-        console.log(data);
         this.donate=data;
+        console.log(data);
+        
       },
       (error)=>{
         console.log(error);
@@ -77,6 +77,7 @@ export class AlertDonateComponent implements OnInit {
         this.widget=data;
         console.log(data);
         
+        
       },
       (error)=>{
         console.log(error);
@@ -84,5 +85,6 @@ export class AlertDonateComponent implements OnInit {
       }
     )
   }
+
 
 }

@@ -8,6 +8,7 @@ import { AddWidgetComponent } from './pages/user/add-widget/add-widget.component
 import { DashboardComponent } from './pages/user/dashboard/dashboard.component';
 import { MessageComponent } from './pages/user/message/message.component';
 import { ProfileComponent } from './pages/user/profile/profile.component';
+import { UpdateWidgetComponent } from './pages/user/update-widget/update-widget.component';
 import { WidgetComponent } from './pages/user/widget/widget.component';
 import { UserGuard } from './services/user.guard';
 
@@ -36,6 +37,10 @@ const routes: Routes = [
       {
         path: 'widgets/add',
         component: AddWidgetComponent
+      },
+      {
+        path: 'widgets/:widgetId',
+        component: UpdateWidgetComponent
       }
     ]
   }
