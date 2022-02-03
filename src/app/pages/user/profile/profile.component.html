@@ -1,1 +1,38 @@
-<p>profile fff!</p>
+<mat-card *ngIf="user"> 
+    <mat-card-title>Мой профиль</mat-card-title>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+
+                <div class="container text-center" *ngIf="user.profileImage">
+                    <img src="../../../assets/{{user.profileImage}}" alt="" class="profile-image">
+                    <h1 class="mt15">{{user.userName}}</h1>
+                </div>
+                <!-- {{user | json}} -->
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <table class="table text-center">
+                            <tr>
+                                <td>Логин</td>
+                                <td>{{user.userName}}</td>
+                            </tr>
+                            <tr>
+                                <td>Баланс</td>
+                                <td>{{user.balance}} руб.</td>
+                            </tr>
+                            <tr>
+                                <td>Почта</td>
+                                <td >{{user.email}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <mat-card-actions class="text-center">
+            <button mat-raised-button color="primary" [routerLink]="'/dashboard/update'">Изменить</button>
+            <button mat-raised-button color="warn" (click)="deleteProfile()">Удалить аккаунт</button>
+        </mat-card-actions>
+
+    </mat-card-content>
+</mat-card>

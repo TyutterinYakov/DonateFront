@@ -12,7 +12,12 @@ export class UserService {
   public addUser(user:any)
 {
   return this.http.post(`${baseUrl}/register`, user);
-
-
 }
+  public updateUser(user:any){
+    return this.http.put(`${baseUrl}/profile/`, user);
+  }
+  public deleteUser(){
+    return this.http.delete(`${baseUrl}/profile/`);
+  }
+
 }

@@ -29,6 +29,7 @@ import {MatTableModule} from '@angular/material/table';
 import { AlertDonateComponent } from './pages/alert-donate/alert-donate.component';
 import { AddWidgetComponent } from './pages/user/add-widget/add-widget.component';
 import { UpdateWidgetComponent } from './pages/user/update-widget/update-widget.component';
+import { UpdateProfileComponent } from './pages/user/update-profile/update-profile.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { UpdateWidgetComponent } from './pages/user/update-widget/update-widget.
     DonateComponent,
     AlertDonateComponent,
     AddWidgetComponent,
-    UpdateWidgetComponent
+    UpdateWidgetComponent,
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,

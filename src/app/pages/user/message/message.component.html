@@ -1,6 +1,6 @@
 <mat-card>
  <mat-card-title class="mb15">Мои сообщения</mat-card-title>
- <mat-card-subtitle class="mt15">Всего сообщений: 4343 шт. на сумму: 342344 руб.</mat-card-subtitle>
+ <mat-card-subtitle class="mt15">Всего сообщений: {{user.countMessage}} шт. на сумму: {{user.allTimeMoney}} руб.</mat-card-subtitle>
  <table mat-table [dataSource]="messages" class="mat-elevation-z8">
 
   

@@ -10,6 +10,7 @@ import { WidgetService } from 'src/app/services/widget.service';
 })
 export class AlertDonateComponent implements OnInit {
 
+  start=false;
   username="";
   donate:any={
     message:'',
@@ -47,7 +48,8 @@ export class AlertDonateComponent implements OnInit {
       this.getWidgetBySumm();
       await this.delay(6000);
       if(this.widget.time!=0){
-      await this.delay(this.widget.time*1000);
+        this.start=true;
+        await this.delay(this.widget.time*1000);
       }
     }
     this.donate=null;
@@ -56,6 +58,7 @@ export class AlertDonateComponent implements OnInit {
       music:'',
       time:0
     }
+    this.start=false;
   }
 }
   getDonation(){

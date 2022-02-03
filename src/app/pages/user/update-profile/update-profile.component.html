@@ -6,10 +6,10 @@
               <mat-card>
                 <div class="container text-center">
                 </div>
-                <h1 class="text-center">Зарегистрируйтесь</h1>
+                <h1 class="text-center">Редактирование данных</h1>
 
                 <!-- {{user | json}} -->
-                <form (ngSubmit)="formSubmit()">
+                <form (ngSubmit)="saveProfile()">
                 <mat-form-field appearance="outline" class="full-width">
                     <mat-label>Логин</mat-label>
                     <input 
@@ -22,7 +22,6 @@
                   <mat-form-field appearance="outline" class="full-width">
                     <mat-label>Пароль</mat-label>
                     <input
-                    required
                     [(ngModel)]="user.password" 
                     name="password"
                     type="password" matInput placeholder="Введите пароль">
@@ -36,10 +35,9 @@
                     type="email" matInput placeholder="Введите свою почту">
                   </mat-form-field>
                   <div class="container text-center">
-                      <button type="submit" mat-raised-button color="primary">Зарегистрироваться</button>
+                      <button type="submit" mat-raised-button color="primary">Сохранить</button>
                 </div>
                 </form>
-                {{user | json}}
               </mat-card>
             </div>
         </div>
