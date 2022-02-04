@@ -30,6 +30,7 @@ import { AlertDonateComponent } from './pages/alert-donate/alert-donate.componen
 import { AddWidgetComponent } from './pages/user/add-widget/add-widget.component';
 import { UpdateWidgetComponent } from './pages/user/update-widget/update-widget.component';
 import { UpdateProfileComponent } from './pages/user/update-profile/update-profile.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { UpdateProfileComponent } from './pages/user/update-profile/update-profi
     AlertDonateComponent,
     AddWidgetComponent,
     UpdateWidgetComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

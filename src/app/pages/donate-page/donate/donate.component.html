@@ -32,12 +32,13 @@
                                         ></textarea>
                                     </mat-form-field>
                                     <mat-form-field class="w100" appearance="outline">
-                                        <mat-label>Сумма, руб</mat-label>
+                                        <mat-label>Сумма, руб. Минимум {{minSummDonate}}</mat-label>
                                         <input 
                                         type="number" 
                                         name="summ" 
+                                        min="{{minSummDonate}}"
                                         matInput 
-                                        placeholder="Введите сумму"
+                                        placeholder="Введите сумму. Ограничение установлено пользователем"
                                         [(ngModel)]="donation.summ"
             
                                         />

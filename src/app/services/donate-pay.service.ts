@@ -17,5 +17,9 @@ export class DonatePayService {
     return this.http.get(`${baseUrl}/donation/alert/${userName}`);
   }
 
+  getMinSummDonateUser(username: string) {
+    return this.http.get(`${baseUrl}/pay/${username}`);
+  }
+
 
 }

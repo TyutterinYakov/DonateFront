@@ -16,6 +16,7 @@ export class UpdateProfileComponent implements OnInit {
     password:'',
     userName:'',
     email:'',
+    minSummDonate:''
   }
   ngOnInit(): void {
     this._login.getCurrentUser().subscribe(

@@ -13,7 +13,8 @@ export class ProfileComponent implements OnInit {
     userName:'',
     email:'',
     balance:'',
-    profileImage:''
+    profileImage:'',
+    minSummDonate:''
   }
   constructor(private _user:UserService, private _login:LoginService) { }
 

@@ -27,6 +27,15 @@
                     type="password" matInput placeholder="Введите пароль">
                   </mat-form-field>
                   <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Минимальный донат(Мин 1 руб.)</mat-label>
+                    <input 
+                    required
+                    min=1
+                    [(ngModel)]="user.minSummDonate"
+                    name="minSummDonate"
+                    type="number" matInput placeholder="Введите минимальный донат">
+                  </mat-form-field>
+                  <mat-form-field appearance="outline" class="full-width">
                     <mat-label>Почта</mat-label>
                     <input 
                     required

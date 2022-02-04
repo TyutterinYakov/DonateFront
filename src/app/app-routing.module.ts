@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AlertDonateComponent } from './pages/alert-donate/alert-donate.component';
 import { DonateComponent } from './pages/donate-page/donate/donate.component';
+import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AddWidgetComponent } from './pages/user/add-widget/add-widget.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'register', component: RegisterComponent, pathMatch:'full'},
   {path:'pay/:userName', component: DonateComponent, pathMatch:'full'},
   {path:'alert/:userName', component: AlertDonateComponent, pathMatch:'full'},
+  {path:'', component:HomeComponent},
   {
     path: 'dashboard', 
     component: DashboardComponent, 
