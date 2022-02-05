@@ -31,6 +31,7 @@ import { AddWidgetComponent } from './pages/user/add-widget/add-widget.component
 import { UpdateWidgetComponent } from './pages/user/update-widget/update-widget.component';
 import { UpdateProfileComponent } from './pages/user/update-profile/update-profile.component';
 import { HomeComponent } from './pages/home/home.component';
+import { WithdrawComponent } from './pages/user/withdraw/withdraw.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { HomeComponent } from './pages/home/home.component';
     AddWidgetComponent,
     UpdateWidgetComponent,
     UpdateProfileComponent,
-    HomeComponent
+    HomeComponent,
+    WithdrawComponent
   ],
   imports: [
     BrowserModule,

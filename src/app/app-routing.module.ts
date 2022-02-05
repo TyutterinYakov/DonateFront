@@ -12,6 +12,7 @@ import { ProfileComponent } from './pages/user/profile/profile.component';
 import { UpdateProfileComponent } from './pages/user/update-profile/update-profile.component';
 import { UpdateWidgetComponent } from './pages/user/update-widget/update-widget.component';
 import { WidgetComponent } from './pages/user/widget/widget.component';
+import { WithdrawComponent } from './pages/user/withdraw/withdraw.component';
 import { UserGuard } from './services/user.guard';
 
 const routes: Routes = [
@@ -48,6 +49,10 @@ const routes: Routes = [
       {
         path:'update',
         component: UpdateProfileComponent
+      },
+      {
+        path:'withdraw',
+        component: WithdrawComponent
       },
     ]
   }
