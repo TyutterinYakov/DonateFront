@@ -16,8 +16,11 @@ export class UpdateWidgetComponent implements OnInit {
     music:'',
     widgetId:'',
     summMin:'',
-    time:''
+    time:'',
+    personalizationId:''
   }
+  fileName = '';
+  formData = new FormData();
   constructor(private _widget:WidgetService, private _route:ActivatedRoute, private _router:Router) {
 
    }
@@ -36,9 +39,24 @@ export class UpdateWidgetComponent implements OnInit {
       }
     );
   }
+  onFileSelected(event:any) {
 
+    const file:File = event.target.files[0];
+
+    if (file) {
+
+        this.fileName = file.name;
+
+        this.formData.append("image", file);
+
+    }
+}
   updateWidget(){
-    this._widget.updateWidget(this.widget).subscribe(
+    this.formData.append("time",this.widget.time);
+    this.formData.append("music",this.widget.music);
+    this.formData.append("summMin",this.widget.summMin);
+    this.formData.append("personalizationId", this.widget.personalizationId);
+    this._widget.updateWidget(this.formData).subscribe(
       (data)=>{
         Swal.fire("Успешно", "Виджет обновлен").then((e)=>{
           this._router.navigate(['/dashboard/widgets'])

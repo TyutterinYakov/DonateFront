@@ -8,18 +8,6 @@
                     <form (submit)="updateWidget()">
 
                         <mat-form-field class="w100" appearance="outline">
-                            <mat-label>Изображение</mat-label>
-                            <input 
-                            required
-                            type="text" 
-                            placeholder="Введите изображение" 
-                            name="image"
-                            matInput
-                            [(ngModel)]="widget.image"
-                            
-                            >
-                        </mat-form-field>
-                        <mat-form-field class="w100" appearance="outline">
                             <mat-label>Музыка</mat-label>
                             <input 
                             required
@@ -55,6 +43,14 @@
                             
                             >
                         </mat-form-field>
+                        <div class="file-upload">
+
+                            <input type="file" class="file-input"
+                            (change)="onFileSelected($event)">
+                            {{fileName || "Загрузите анимацию"}}
+                        
+
+                        </div>
                         
                             
                           <div class="container text-center">

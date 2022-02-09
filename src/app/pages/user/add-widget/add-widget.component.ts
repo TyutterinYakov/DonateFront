@@ -10,27 +10,43 @@ import Swal from 'sweetalert2';
 })
 export class AddWidgetComponent implements OnInit {
 
-  widget={
+  widget:any={
     image:'',
     summMin:'',
     music:'',
     time:''
   }
+  fileName = '';
   constructor(private _widget:WidgetService, private router:Router) { }
 
   ngOnInit(): void {
   }
+  formData = new FormData();
+  onFileSelected(event:any) {
 
-  addWidget(){
-    this._widget.addWidget(this.widget).subscribe(
-      (data)=>{
-        Swal.fire("Успешно", "Виджет добавлен").then((e)=>{
-          this.router.navigate(['/dashboard/widgets/']);
-        });
-        
-      }
-    )
-  }
+    const file:File = event.target.files[0];
+
+    if (file) {
+
+        this.fileName = file.name;
+
+        this.formData.append("image", file);
+
+    }
+}
+addWidget(){
+  this.formData.append("time",this.widget.time);
+  this.formData.append("music",this.widget.music);
+  this.formData.append("summMin",this.widget.summMin);
+  this._widget.addWidget(this.formData).subscribe(
+    (data)=>{
+      Swal.fire("Успешно", "Виджет добавлен").then((e)=>{
+        this.router.navigate(['/dashboard/widgets/']);
+      });
+      
+    }
+  )
+}
 
 
 

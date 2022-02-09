@@ -1,24 +1,13 @@
 <mat-card>
 
     <mat-card-title>Добавить виджет</mat-card-title>
-    {{widget | json}}
+    <!-- {{widget | json}} -->
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
                     <form (submit)="addWidget()">
 
-                        <mat-form-field class="w100" appearance="outline">
-                            <mat-label>Изображение</mat-label>
-                            <input 
-                            required
-                            type="text" 
-                            placeholder="Введите изображение" 
-                            name="image"
-                            matInput
-                            [(ngModel)]="widget.image"
-                            
-                            >
-                        </mat-form-field>
+
                         <mat-form-field class="w100" appearance="outline">
                             <mat-label>Музыка</mat-label>
                             <input 
@@ -55,9 +44,17 @@
                             
                             >
                         </mat-form-field>
+                        <div class="file-upload">
+
+                            <input type="file" class="file-input"
+                            (change)="onFileSelected($event)">
+                            {{fileName || "Загрузите анимацию"}}
+                        
+
+                        </div>
                         
                             
-                          <div class="container text-center">
+                          <div class="container text-center mt15">
                               <button mat-flat-button color="primary" type="submit">Добавить</button>
                           </div>
                     </form>
