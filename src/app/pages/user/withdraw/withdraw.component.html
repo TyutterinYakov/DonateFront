@@ -1,7 +1,7 @@
 <mat-card>
     <mat-card-title class="mb15">Ваши выплаты</mat-card-title>
     <mat-card-subtitle class="mt15">Всего успешных операций: {{user.withDrawCount}} шт. на сумму: {{user.withDrawSumm}} руб.</mat-card-subtitle>
-    <h1><strong>Баланс: {{user.balance}}</strong></h1>
+    <h1><strong>Баланс: {{user.balance}} руб.</strong></h1>
     <p>Сумма не должна быть меньше 50 рублей</p>
     <form class="ml15" (submit)="withdrawSubmit()">
         <div class="row">
@@ -11,6 +11,7 @@
             required 
             name="userName"
             type="number"
+            min="50"
             [(ngModel)]="withDrawSummPay"
             matInput placeholder="Введите сумму">
           </mat-form-field>

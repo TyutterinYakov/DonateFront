@@ -5,8 +5,20 @@
             <div class="container">
 
                 <div class="container text-center" *ngIf="user.profileImage">
-                    <img src="../../../assets/{{user.profileImage}}" alt="" class="profile-image">
+                    <img [src]="profileImage" alt="" class="profile-image">
                     <h1 class="mt15">{{user.userName}}</h1>
+                    <input type="file" class="file-input"
+       (change)="onFileSelected($event)" #fileUpload>
+
+    <div class="file-upload">
+
+    {{fileName || "Выберите фото профиля"}}
+
+        <button mat-mini-fab color="primary" class="upload-btn"
+        (click)="fileUpload.click()">
+            <mat-icon>attach_file</mat-icon>
+        </button>
+    </div>
                 </div>
                 <!-- {{user | json}} -->
                 <div class="row">

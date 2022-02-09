@@ -9,6 +9,13 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
 
+  getProfileImage() {
+    return this.http.get(`${baseUrl}/profile/image`, {responseType:'blob'});
+  }
+
+  updateImageProfile(formData: FormData) {
+    return this.http.post(`${baseUrl}/profile/image`, formData);
+  }
   public addUser(user:any)
 {
   return this.http.post(`${baseUrl}/register`, user);
