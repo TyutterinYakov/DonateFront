@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { DonatePayService } from 'src/app/services/donate-pay.service';
 import { WidgetService } from 'src/app/services/widget.service';
@@ -23,15 +24,18 @@ export class AlertDonateComponent implements OnInit {
     music:'',
     time:0,
   }
+  music:any;
+  musicName:any;
   private delay(ms: number)
   {
   return new Promise(resolve => setTimeout(resolve, ms));
   }
-  constructor(private _donation:DonatePayService, private route:ActivatedRoute, private _widget:WidgetService) { 
+  constructor(private _donation:DonatePayService, private route:ActivatedRoute, private _widget:WidgetService, private sanitizer:DomSanitizer) { 
 
   }
 
   ngOnInit(): void {
+
     this.username=this.route.snapshot.params['userName'];
     this.sleepExample();
   }
@@ -46,10 +50,13 @@ export class AlertDonateComponent implements OnInit {
       await this.delay(30000);
     } else {
       this.getWidgetBySumm();
-      await this.delay(6000);
       if(this.widget.time!=0){
+        this.musicName = this.widget.music;
+        this.getMusicByName();
+        await this.delay(6000);
         this.start=true;
         await this.delay(this.widget.time*1000);
+        this.musicName=null;
       }
     }
     this.donate=null;
@@ -88,6 +95,22 @@ export class AlertDonateComponent implements OnInit {
       }
     )
   }
+  getMusicByName(){
+    this._widget.getMusic(this.musicName).subscribe(
+      (data:any)=>{
+        let objectURL = URL.createObjectURL(data);
+        this.music=data;
+        this.music = this.sanitizer.bypassSecurityTrustUrl(objectURL);
+      },
+      (error)=>{
+        // Swal.fire("Ошибка", "Попробуйте позже");
+        console.log(error);
+        
+      }
+    )
+  }
+
+  
 
 
 }

@@ -17,11 +17,13 @@ export class AddWidgetComponent implements OnInit {
     time:''
   }
   fileName = '';
+  musicName='';
   constructor(private _widget:WidgetService, private router:Router) { }
 
   ngOnInit(): void {
   }
   formData = new FormData();
+  //Загрузка изображения
   onFileSelected(event:any) {
 
     const file:File = event.target.files[0];
@@ -34,9 +36,21 @@ export class AddWidgetComponent implements OnInit {
 
     }
 }
+//Загрузка музыки
+onFileSelectedMusic(event:any) {
+
+  const file:File = event.target.files[0];
+
+  if (file) {
+
+      this.musicName = file.name;
+
+      this.formData.append("music", file);
+
+  }
+}
 addWidget(){
   this.formData.append("time",this.widget.time);
-  this.formData.append("music",this.widget.music);
   this.formData.append("summMin",this.widget.summMin);
   this._widget.addWidget(this.formData).subscribe(
     (data)=>{

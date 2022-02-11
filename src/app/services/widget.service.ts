@@ -30,4 +30,8 @@ export class WidgetService {
   updateWidget(widget: any) {
     return this.http.put(`${baseUrl}/widgets/`, widget);
   }
+
+  getMusic(musicName:any) {
+    return this.http.get(`${baseUrl}/widget-animate/music/${musicName}`, {responseType:'blob'});
+  }
 }

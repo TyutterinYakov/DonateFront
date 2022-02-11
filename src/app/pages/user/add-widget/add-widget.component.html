@@ -6,20 +6,6 @@
             <div class="row">
                 <div class="col-md-8 offset-md-2">
                     <form (submit)="addWidget()">
-
-
-                        <mat-form-field class="w100" appearance="outline">
-                            <mat-label>Музыка</mat-label>
-                            <input 
-                            required
-                            type="text" 
-                            placeholder="Введите музыку" 
-                            name="music"
-                            matInput
-                            [(ngModel)]="widget.music"
-                            
-                            >
-                        </mat-form-field>
                         <mat-form-field class="w100" appearance="outline">
                             <mat-label>Сумма</mat-label>
                             <input 
@@ -44,6 +30,15 @@
                             
                             >
                         </mat-form-field>
+                        <div class="file-upload">
+
+                            <input type="file" class="file-input"
+                            (change)="onFileSelectedMusic($event)">
+                            {{musicName || "Загрузите музыку"}}
+                        
+
+                        </div>
+<br>
                         <div class="file-upload">
 
                             <input type="file" class="file-input"

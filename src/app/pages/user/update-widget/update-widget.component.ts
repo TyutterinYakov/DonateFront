@@ -19,6 +19,7 @@ export class UpdateWidgetComponent implements OnInit {
     time:'',
     personalizationId:''
   }
+  musicName='';
   fileName = '';
   formData = new FormData();
   constructor(private _widget:WidgetService, private _route:ActivatedRoute, private _router:Router) {
@@ -39,6 +40,7 @@ export class UpdateWidgetComponent implements OnInit {
       }
     );
   }
+  //Загрузка изображения
   onFileSelected(event:any) {
 
     const file:File = event.target.files[0];
@@ -51,9 +53,21 @@ export class UpdateWidgetComponent implements OnInit {
 
     }
 }
+//Загрузка музыки
+onFileSelectedMusic(event:any) {
+
+  const file:File = event.target.files[0];
+
+  if (file) {
+
+      this.musicName = file.name;
+
+      this.formData.append("music", file);
+
+  }
+}
   updateWidget(){
     this.formData.append("time",this.widget.time);
-    this.formData.append("music",this.widget.music);
     this.formData.append("summMin",this.widget.summMin);
     this.formData.append("personalizationId", this.widget.personalizationId);
     this._widget.updateWidget(this.formData).subscribe(
