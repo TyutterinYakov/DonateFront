@@ -50,10 +50,11 @@ export class AlertDonateComponent implements OnInit {
       await this.delay(30000);
     } else {
       this.getWidgetBySumm();
+      await this.delay(3000);
       if(this.widget.time!=0){
         this.musicName = this.widget.music;
         this.getMusicByName();
-        await this.delay(6000);
+        await this.delay(3000);
         this.start=true;
         await this.delay(this.widget.time*1000);
         this.musicName=null;

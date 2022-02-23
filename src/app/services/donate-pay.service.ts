@@ -10,15 +10,15 @@ export class DonatePayService {
   constructor(private http:HttpClient) { }
 
   donatePay(donate:any){
-    return this.http.post(`${baseUrl}/pay/`, donate);
+    return this.http.post(`${baseUrl}/api/pay`, donate);
   }
 
   getDonationFromUserDontPlay(userName:string){
-    return this.http.get(`${baseUrl}/donation/alert/${userName}`);
+    return this.http.get(`${baseUrl}/api/user/donation/${userName}`);
   }
 
   getMinSummDonateUser(username: string) {
-    return this.http.get(`${baseUrl}/pay/${username}`);
+    return this.http.get(`${baseUrl}/api/pay/${username}`);
   }
 
 

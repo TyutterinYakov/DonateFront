@@ -11,9 +11,9 @@ export class WithdrawService {
   constructor(private http:HttpClient) { }
 
   getAllWithDraw() {
-    return this.http.get(`${baseUrl}/withdraw/`);
+    return this.http.get(`${baseUrl}/api/user/withdraw`);
   }
   addWithdrawPay(withDrawSummPay: any) {
-    return this.http.post(`${baseUrl}/withdraw/`, withDrawSummPay);
+    return this.http.post(`${baseUrl}/api/user/withdraw`, withDrawSummPay);
   }
 }

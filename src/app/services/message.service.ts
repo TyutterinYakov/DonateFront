@@ -11,10 +11,10 @@ export class MessageService {
 
 
   getAllMessageUser(){
-    return this.http.get(`${baseUrl}/donation/`)
+    return this.http.get(`${baseUrl}/api/user/donation`)
   }
 
   removeMessage(donationId: number) {
-    return this.http.delete(`${baseUrl}/donation/${donationId}`);
+    return this.http.delete(`${baseUrl}/api/user/donation/${donationId}`);
   }
 }

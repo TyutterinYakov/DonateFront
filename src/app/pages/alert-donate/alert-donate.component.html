@@ -1,14 +1,14 @@
 <div class="title" *ngIf="start">
 
             <div class="text-center mt30">
-                <img src="http://localhost:8080/widget-animate/image/{{widget.image}}" class="image">
+                <img src="http://localhost:8080/api/widget/image/{{widget.image}}" class="image">
             </div>
             <div class="text-center text">
                 <strong>{{donate.summ}} РУБ.</strong><br>
                 <br>
                 <span class="mt5">{{donate.donationName}}</span>
                 <h3 class="mt5">{{donate.message}}</h3>
-            <audio class="hidden" controls autoplay="true" loop="true" preload="auto">
+            <audio class="hidden" controls autoplay="true" loop="true">
                 <source [src]="music" type="audio/mpeg">
             </audio>
             </div>
